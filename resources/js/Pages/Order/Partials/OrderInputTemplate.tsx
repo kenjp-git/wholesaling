@@ -23,7 +23,7 @@ export default function OrderInputTemplate({
     // data,
 }: {}) {
     return (
-        <TableRow className="grid-cols-8 bg-gray-400">
+        <TableRow className="grid-cols-8 border-gray-400 bg-gray-400">
             <DataCell>
                 <TableInput />
             </DataCell>

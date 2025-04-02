@@ -1,8 +1,14 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 
-export default function TableBody({ children }: PropsWithChildren) {
+export default function TableBody({
+    children,
+    ...props
+}: PropsWithChildren<React.HTMLProps<HTMLTableElement>>) {
+    const default_style = "border border-t-0"
+    const [style] = useState<string>(`${default_style} ${props.className}`)
+
     return (
-        <tbody className="border border-green-400 border-t-0">
+        <tbody className={style}>
             {children}
         </tbody>
     )

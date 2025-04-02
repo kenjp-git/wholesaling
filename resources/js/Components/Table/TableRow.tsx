@@ -5,7 +5,7 @@ export default function TableRow({
     children,
     ...props
 }: PropsWithChildren<React.HTMLProps<HTMLTableRowElement>>) {
-    const default_style = "grid gap-px border border-pink-400";
+    const default_style = "grid gap-px border";
     const [style] = useState<string>(`${default_style} ${props.className}`);
 
     return (

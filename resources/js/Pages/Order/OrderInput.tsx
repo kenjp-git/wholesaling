@@ -21,10 +21,12 @@ export default function OrderInput({
 }: PageProps<{ translations: translationsType }>) {
 
     return (
-        <main className='w-11/12 mx-auto my-4 items-center justify-center'>
+        <main className=" w-[1280px] mx-auto my-4 items-center justify-center">
             <Table>
                 <TableHead>
-                    <TableRow className="grid-cols-8 bg-gray-400">
+                    <TableRow className=
+                        "grid-cols-8 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden"
+                    >
                         <HeaderCell>{translations.words.order_details_number}</HeaderCell>
                         <HeaderCell>{translations.words.gtin_code}</HeaderCell>
                         <HeaderCell>{translations.words.product_name}</HeaderCell>
@@ -43,8 +45,17 @@ export default function OrderInput({
                         <HeaderCell>{translations.words.notes}</HeaderCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody className="min-h-full border-green-400">
                     <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    {/* <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate /> */}
                 </TableBody>
                 <TableFoot>
                     <TableRow className="grid-cols-8 border-transparent border-t-0 border-x-white border-b-white bg-gray-400">
