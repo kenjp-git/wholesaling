@@ -53,7 +53,7 @@ export default function OrderInput({
                             <Box>{translations.words.trading_price}</Box>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box></Box>
+                            <Box>{translations.words.tax_rate}</Box>
                             <Box>{translations.words.amount}</Box>
                         </HeaderCell>
                         <HeaderCell>
@@ -71,13 +71,13 @@ export default function OrderInput({
                         <HeaderCell></HeaderCell> */}
                     </TableRow>
                 </TableHead>
-                <TableBody className="min-h-full border-green-400">
+                <TableBody className="">
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
                     {/* <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
-                    <OrderInputTemplate /> */}
-                    {/* <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />

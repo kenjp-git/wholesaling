@@ -1,5 +1,6 @@
 import TableRow from "@/Components/Table/TableRow";
 import DataCell from "@/Components/Table/DataCell";
+import Box from "@/Components/Commons/Box";
 import TableInput from "@/Components/Forms/TableInput";
 import { PropsWithChildren } from "react";
 
@@ -23,54 +24,38 @@ export default function OrderInputTemplate({
     // data,
 }: {}) {
     return (
-        <TableRow className="grid-cols-8 border-gray-400 bg-gray-400">
+        <TableRow className="grid-flow-col grid-cols-8 border-gray-400 bg-gray-400">
             <DataCell>
-                <TableInput />
+                <Box></Box>
+                <Box></Box>
             </DataCell>
             <DataCell>
-                <TableInput />
+                <Box><TableInput /></Box>
+                <Box></Box>
             </DataCell>
             <DataCell>
-                <TableInput />
+                <Box></Box>
+                <Box></Box>
             </DataCell>
             <DataCell>
-                <TableInput />
+                <Box></Box>
+                <Box><TableInput /></Box>
             </DataCell>
             <DataCell>
-                <TableInput />
+                <Box></Box>
+                <Box></Box>
             </DataCell>
             <DataCell>
-                <TableInput />
+                <Box><TableInput /></Box>
+                <Box></Box>
             </DataCell>
             <DataCell>
-                <TableInput />
+                <Box></Box>
+                <Box></Box>
             </DataCell>
             <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
-            </DataCell>
-            <DataCell>
-                <TableInput />
+                <Box><TableInput /></Box>
+                <Box><TableInput /></Box>
             </DataCell>
         </TableRow>
     )
