@@ -4,6 +4,7 @@ import Table from '@/Components/Table/Table';
 import TableHead from '@/Components/Table/TableHead';
 import TableRow from '@/Components/Table/TableRow';
 import TableBody from '@/Components/Table/TableBody';
+import Box from '@/Components/Commons/Box';
 import OrderInputTemplate from './Partials/OrderInputTemplate';
 import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
@@ -21,36 +22,61 @@ export default function OrderInput({
 }: PageProps<{ translations: translationsType }>) {
 
     return (
-        <main className=" w-[1280px] mx-auto my-4 items-center justify-center">
-            <Table>
+        <main className=" w-[1024px] mx-auto my-4 items-center">
+            <Table className="w-full rounded-lg">
                 <TableHead>
                     <TableRow className=
-                        "grid-cols-8 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden"
+                        "grid-flow-col grid-cols-8 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden"
                     >
-                        <HeaderCell>{translations.words.order_details_number}</HeaderCell>
-                        <HeaderCell>{translations.words.gtin_code}</HeaderCell>
-                        <HeaderCell>{translations.words.product_name}</HeaderCell>
+                        <HeaderCell>
+                            <Box>{translations.words.order_details_number}</Box>
+                            <Box></Box>
+                        </HeaderCell>
+                        <HeaderCell>
+                            <Box>{translations.words.gtin_code}</Box>
+                            <Box>{translations.words.supplier_name}</Box>
+                        </HeaderCell>
+                        <HeaderCell>
+                            <Box>{translations.words.product_name}</Box>
+                            <Box>{translations.words.product_specification}</Box>
+                        </HeaderCell>
+                        <HeaderCell>
+                            <Box></Box>
+                            <Box>{translations.words.order_quantity}</Box>
+                        </HeaderCell>
+                        <HeaderCell>
+                            <Box>{translations.words.wholesaling_price}</Box>
+                            <Box>{translations.words.unit}</Box>
+                        </HeaderCell>
+                        <HeaderCell>
+                            <Box>{translations.words.wholesaling_multiplication_rate}</Box>
+                            <Box>{translations.words.trading_price}</Box>
+                        </HeaderCell>
+                        <HeaderCell>
+                            <Box></Box>
+                            <Box>{translations.words.amount}</Box>
+                        </HeaderCell>
+                        <HeaderCell>
+                            <Box>{translations.words.desired_delivery_date}</Box>
+                            <Box>{translations.words.notes}</Box>
+                        </HeaderCell>
+
+                        {/* <HeaderCell></HeaderCell>
                         <HeaderCell></HeaderCell>
-                        <HeaderCell>{translations.words.wholesaling_price}</HeaderCell>
-                        <HeaderCell>{translations.words.wholesaling_multiplication_rate}</HeaderCell>
                         <HeaderCell></HeaderCell>
-                        <HeaderCell>{translations.words.desired_delivery_date}</HeaderCell>
                         <HeaderCell></HeaderCell>
-                        <HeaderCell>{translations.words.supplier_name}</HeaderCell>
-                        <HeaderCell>{translations.words.product_specification}</HeaderCell>
-                        <HeaderCell>{translations.words.order_quantity}</HeaderCell>
-                        <HeaderCell>{translations.words.unit}</HeaderCell>
-                        <HeaderCell>{translations.words.trading_price}</HeaderCell>
-                        <HeaderCell>{translations.words.amount}</HeaderCell>
-                        <HeaderCell>{translations.words.notes}</HeaderCell>
+                        <HeaderCell></HeaderCell>
+                        <HeaderCell></HeaderCell>
+                        <HeaderCell></HeaderCell>
+                        <HeaderCell></HeaderCell> */}
                     </TableRow>
                 </TableHead>
                 <TableBody className="min-h-full border-green-400">
+                    {/* <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
-                    <OrderInputTemplate />
-                    <OrderInputTemplate />
+                    <OrderInputTemplate /> */}
                     {/* <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />

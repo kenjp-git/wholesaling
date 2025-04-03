@@ -1,10 +1,14 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 
-export default function Table({ children }: PropsWithChildren) {
+export default function Table({
+    children,
+    ...props
+}: PropsWithChildren<React.HTMLProps<HTMLTableElement>>) {
+    const default_style = "text-center table-auto border-collapse overflow-hidden"
+    const [style] = useState<string>(`${default_style} ${props.className}`)
+
     return (
-        <table className=
-            "text-center table-fixed border-collapse rounded-lg overflow-hidden"
-        >
+        <table className={style}>
             {children}
         </table>
     )
