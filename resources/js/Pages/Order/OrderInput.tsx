@@ -23,7 +23,7 @@ export default function OrderInput({
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
-            <Table className="w-full rounded-lg">
+            <Table className="w-full h-[70vh] rounded-lg">
                 <TableHead>
                     <TableRow className=
                         "grid-flow-col grid-cols-8 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden"
@@ -71,17 +71,17 @@ export default function OrderInput({
                         <HeaderCell></HeaderCell> */}
                     </TableRow>
                 </TableHead>
-                <TableBody className="">
-                    <OrderInputTemplate />
-                    <OrderInputTemplate />
-                    {/* <OrderInputTemplate />
+                <TableBody className="basis-11/12 border-b border-x border-gray-400">
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
-                    <OrderInputTemplate /> */}
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
                 </TableBody>
                 <TableFoot>
                     <TableRow className="grid-cols-8 border-transparent border-t-0 border-x-white border-b-white bg-gray-400">

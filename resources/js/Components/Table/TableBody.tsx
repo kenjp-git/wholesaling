@@ -4,7 +4,7 @@ export default function TableBody({
     children,
     ...props
 }: PropsWithChildren<React.HTMLProps<HTMLTableElement>>) {
-    const default_style = ""
+    const default_style = "overflow-auto"
     const [style] = useState<string>(`${default_style} ${props.className}`)
 
     return (
