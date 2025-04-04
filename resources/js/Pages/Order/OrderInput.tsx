@@ -4,7 +4,7 @@ import Table from '@/Components/Table/Table';
 import TableHead from '@/Components/Table/TableHead';
 import TableRow from '@/Components/Table/TableRow';
 import TableBody from '@/Components/Table/TableBody';
-import Box from '@/Components/Commons/Box';
+import TableHeaderBox from '@/Components/Commons/TableHeaderBox';
 import OrderInputTemplate from './Partials/OrderInputTemplate';
 import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
@@ -29,36 +29,36 @@ export default function OrderInput({
                         "grid-flow-col grid-cols-8 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden"
                     >
                         <HeaderCell>
-                            <Box>{translations.words.order_details_number}</Box>
-                            <Box></Box>
+                            <TableHeaderBox>{translations.words.order_details_number}</TableHeaderBox>
+                            <TableHeaderBox></TableHeaderBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box>{translations.words.gtin_code}</Box>
-                            <Box>{translations.words.supplier_name}</Box>
+                            <TableHeaderBox>{translations.words.gtin_code}</TableHeaderBox>
+                            <TableHeaderBox>{translations.words.supplier_name}</TableHeaderBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box>{translations.words.product_name}</Box>
-                            <Box>{translations.words.product_specification}</Box>
+                            <TableHeaderBox>{translations.words.product_name}</TableHeaderBox>
+                            <TableHeaderBox>{translations.words.product_specification}</TableHeaderBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box></Box>
-                            <Box>{translations.words.order_quantity}</Box>
+                            <TableHeaderBox></TableHeaderBox>
+                            <TableHeaderBox>{translations.words.order_quantity}</TableHeaderBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box>{translations.words.wholesaling_price}</Box>
-                            <Box>{translations.words.unit}</Box>
+                            <TableHeaderBox>{translations.words.wholesaling_price}</TableHeaderBox>
+                            <TableHeaderBox>{translations.words.unit}</TableHeaderBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box>{translations.words.wholesaling_multiplication_rate}</Box>
-                            <Box>{translations.words.trading_price}</Box>
+                            <TableHeaderBox>{translations.words.wholesaling_multiplication_rate}</TableHeaderBox>
+                            <TableHeaderBox>{translations.words.trading_price}</TableHeaderBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box>{translations.words.tax_rate}</Box>
-                            <Box>{translations.words.amount}</Box>
+                            <TableHeaderBox>{translations.words.tax_rate}</TableHeaderBox>
+                            <TableHeaderBox>{translations.words.amount}</TableHeaderBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <Box>{translations.words.desired_delivery_date}</Box>
-                            <Box>{translations.words.notes}</Box>
+                            <TableHeaderBox>{translations.words.desired_delivery_date}</TableHeaderBox>
+                            <TableHeaderBox>{translations.words.notes}</TableHeaderBox>
                         </HeaderCell>
 
                         {/* <HeaderCell></HeaderCell>
