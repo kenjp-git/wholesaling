@@ -4,10 +4,11 @@ import Table from '@/Components/Table/Table';
 import TableHead from '@/Components/Table/TableHead';
 import TableRow from '@/Components/Table/TableRow';
 import TableBody from '@/Components/Table/TableBody';
-import TableHeaderBox from '@/Components/Commons/TableHeaderBox';
+import ColoredBox from '@/Components/Commons/ColoredBox';
 import OrderInputTemplate from './Partials/OrderInputTemplate';
 import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
+import Box from '@/Components/Commons/Box';
 
 import { Button } from '@material-tailwind/react';
 import Typography from '@mui/material/Typography';
@@ -23,42 +24,42 @@ export default function OrderInput({
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
-            <Table className="w-full h-[70vh] rounded-lg">
+            <Table className="w-full h-[70vh] border rounded-lg">
                 <TableHead>
                     <TableRow className=
                         "grid-flow-col grid-cols-8 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden"
                     >
                         <HeaderCell>
-                            <TableHeaderBox>{translations.words.order_details_number}</TableHeaderBox>
-                            <TableHeaderBox></TableHeaderBox>
+                            <ColoredBox>{translations.words.order_details_number}</ColoredBox>
+                            <ColoredBox></ColoredBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <TableHeaderBox>{translations.words.gtin_code}</TableHeaderBox>
-                            <TableHeaderBox>{translations.words.supplier_name}</TableHeaderBox>
+                            <ColoredBox>{translations.words.gtin_code}</ColoredBox>
+                            <ColoredBox>{translations.words.supplier_name}</ColoredBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <TableHeaderBox>{translations.words.product_name}</TableHeaderBox>
-                            <TableHeaderBox>{translations.words.product_specification}</TableHeaderBox>
+                            <ColoredBox>{translations.words.product_name}</ColoredBox>
+                            <ColoredBox>{translations.words.product_specification}</ColoredBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <TableHeaderBox></TableHeaderBox>
-                            <TableHeaderBox>{translations.words.order_quantity}</TableHeaderBox>
+                            <ColoredBox></ColoredBox>
+                            <ColoredBox>{translations.words.order_quantity}</ColoredBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <TableHeaderBox>{translations.words.wholesaling_price}</TableHeaderBox>
-                            <TableHeaderBox>{translations.words.unit}</TableHeaderBox>
+                            <ColoredBox>{translations.words.wholesaling_price}</ColoredBox>
+                            <ColoredBox>{translations.words.unit}</ColoredBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <TableHeaderBox>{translations.words.wholesaling_multiplication_rate}</TableHeaderBox>
-                            <TableHeaderBox>{translations.words.trading_price}</TableHeaderBox>
+                            <ColoredBox>{translations.words.wholesaling_multiplication_rate}</ColoredBox>
+                            <ColoredBox>{translations.words.trading_price}</ColoredBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <TableHeaderBox>{translations.words.tax_rate}</TableHeaderBox>
-                            <TableHeaderBox>{translations.words.amount}</TableHeaderBox>
+                            <ColoredBox></ColoredBox>
+                            <ColoredBox>{translations.words.amount}</ColoredBox>
                         </HeaderCell>
                         <HeaderCell>
-                            <TableHeaderBox>{translations.words.desired_delivery_date}</TableHeaderBox>
-                            <TableHeaderBox>{translations.words.notes}</TableHeaderBox>
+                            <ColoredBox>{translations.words.desired_delivery_date}</ColoredBox>
+                            <ColoredBox>{translations.words.notes}</ColoredBox>
                         </HeaderCell>
 
                         {/* <HeaderCell></HeaderCell>
@@ -71,7 +72,7 @@ export default function OrderInput({
                         <HeaderCell></HeaderCell> */}
                     </TableRow>
                 </TableHead>
-                <TableBody className="basis-11/12 border-b border-x border-gray-400">
+                <TableBody className="basis-10/12 border-b border-gray-400">
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
@@ -83,20 +84,24 @@ export default function OrderInput({
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                 </TableBody>
-                <TableFoot>
-                    <TableRow className="grid-cols-8 border-transparent border-t-0 border-x-white border-b-white bg-gray-400">
-                        <FooterCell className="col-span-5 border border-white bg-white"></FooterCell>
-                        <FooterCell className="col-span-1 bg-gray-100 border-b border-b-gray-400">
-                            <Typography>
-                                {translations.words.total}
-                            </Typography>
+                <TableFoot className="basis-1/12">
+                    <TableRow className="grid-flow-col grid-cols-8 border-transparent border-y-0 border-x-white bg-gray-400">
+                        <FooterCell className="col-span-5 border border-white bg-white">
+                            <Box></Box>
+                            <Box></Box>
                         </FooterCell>
-                        <FooterCell className="col-span-1 border-b bg-white border-b-gray-400 p-0">
-                            <Typography>
-                                {translations.words.totalPrice}
-                            </Typography>
+                        <FooterCell className="col-span-1 border-b bg-gray-400 border-b-gray-400">
+                            <ColoredBox>{translations.words.order_total_amount}</ColoredBox>
+                            <ColoredBox>{translations.words.order_total_quantity}</ColoredBox>
                         </FooterCell>
-                        <FooterCell className="col-span-1 bg-white border border-white p-0"></FooterCell>
+                        <FooterCell className="col-span-1 border-b bg-gray-400 border-b-gray-400">
+                            <Box></Box>
+                            <Box></Box>
+                        </FooterCell>
+                        <FooterCell className="col-span-1 bg-white border border-white">
+                            <Box></Box>
+                            <Box></Box>
+                        </FooterCell>
                     </TableRow>
                 </TableFoot>
             </Table>

@@ -15,6 +15,8 @@ return [
     'wholesaling_price' => '卸売価格',
     'wholesaling_multiplication_rate' => '卸売掛率',
     'trading_price' => '取引価格',
+    'order_total_amount' => '受注合計金額',
+    'order_total_quantity' => '合計点数',
     'tax_rate' => '税率',
     'amount' => '金額',
     'total_amount' => '合計金額',
