@@ -1,9 +1,10 @@
 <?php
 
 return [
-    'order_number' => '注文番号',
-    'order_date' => '注文日',
-
+    'order_number' => '受注番号',
+    'order_date' => '受注日付',
+    'retailer_code' => '得意先コード',
+    'retailer_name' => '得意先名',
     'order_details_number' => 'No.',
     'erase' => '削除',
     'gtin_code' => 'JAN/GTIN',

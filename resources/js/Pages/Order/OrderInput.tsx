@@ -1,29 +1,61 @@
 import { PageProps } from '@/types';
-import HeaderCell from '@/Components/Table/HeaderCell';
 import Table from '@/Components/Table/Table';
 import TableHead from '@/Components/Table/TableHead';
 import TableRow from '@/Components/Table/TableRow';
-import TableBody from '@/Components/Table/TableBody';
+import HeaderCell from '@/Components/Table/HeaderCell';
 import ColoredBox from '@/Components/Commons/ColoredBox';
+import TableBody from '@/Components/Table/TableBody';
 import OrderInputTemplate from './Partials/OrderInputTemplate';
 import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
 import Box from '@/Components/Commons/Box';
-
 import { Button } from '@material-tailwind/react';
-import Typography from '@mui/material/Typography';
+import InfoInput from '@/Components/Forms/InfoInput';
+
+
 type translationsType = {
     [key: string]: {
         [key: string]: string;
     };
 }
 
-export default function OrderInput({
+export default function Orderinput({
     translations,
 }: PageProps<{ translations: translationsType }>) {
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
+            <header className="w-8/12">
+                <form className="flex flex-row row-span-2 grow gap-4 m-2 justify-start">
+                    <div className="w-1/2 grid grid-flow-row grid-rows-2 gap-1">
+                        <article className="grid grid-flow-col grid-cols-3">
+                            <label className="border px-2 text-nowrap" htmlFor="order_number">
+                                <p>{translations.words.order_number}</p>
+                            </label>
+                            <InfoInput type="text" name="order_number" id="order_number" />
+                        </article>
+                        <article className="grid grid-flow-col grid-cols-3">
+                            <label className="border px-2 text-nowrap" htmlFor="order_date">
+                                <p>{translations.words.order_date}</p>
+                            </label>
+                            <InfoInput type="date" name="order_date" id="order_date" />
+                        </article>
+                    </div>
+                    <div className="w-1/2 grid grid-flow-row grid-rows-2 gap-1">
+                        <article className="grid grid-flow-col grid-cols-3">
+                            <label className="border px-2 text-nowrap" htmlFor="retailer_code">
+                                {translations.words.retailer_code}
+                            </label>
+                            <InfoInput type="text" name="retailer_code" id="retailer_code" />
+                        </article>
+                        <article className="grid grid-flow-col grid-cols-3">
+                            <label className="border px-2 text-nowrap" htmlFor="retailer_name">{translations.words.retailer_name}</label>
+                            <InfoInput type="text" name="retailer_name" id="retailer_name" />
+                        </article>
+                    </div>
+                </form>
+            </header>
+
             <Table className="w-full h-[70vh] border rounded-lg">
                 <TableHead>
                     <TableRow className=
@@ -61,18 +93,11 @@ export default function OrderInput({
                             <ColoredBox>{translations.words.desired_delivery_date}</ColoredBox>
                             <ColoredBox>{translations.words.notes}</ColoredBox>
                         </HeaderCell>
-
-                        {/* <HeaderCell></HeaderCell>
-                        <HeaderCell></HeaderCell>
-                        <HeaderCell></HeaderCell>
-                        <HeaderCell></HeaderCell>
-                        <HeaderCell></HeaderCell>
-                        <HeaderCell></HeaderCell>
-                        <HeaderCell></HeaderCell>
-                        <HeaderCell></HeaderCell> */}
                     </TableRow>
                 </TableHead>
                 <TableBody className="basis-10/12 border-b border-gray-400">
+                    <OrderInputTemplate />
+                    <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
@@ -105,6 +130,7 @@ export default function OrderInput({
                     </TableRow>
                 </TableFoot>
             </Table>
+
             <Button disabled className='bg-gray-400 font-thin py-1 px-4 justify-end'>確定</Button>
         </main>
     )
