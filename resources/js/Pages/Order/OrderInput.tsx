@@ -11,6 +11,7 @@ import FooterCell from '@/Components/Table/FooterCell';
 import Box from '@/Components/Commons/Box';
 import { Button } from '@material-tailwind/react';
 import InfoInput from '@/Components/Forms/InfoInput';
+import InfoCell from '@/Components/Commons/InfoCell';
 
 
 type translationsType = {
@@ -28,30 +29,28 @@ export default function Orderinput({
             <header className="w-8/12">
                 <form className="flex flex-row row-span-2 grow gap-4 m-2 justify-start">
                     <div className="w-1/2 grid grid-flow-row grid-rows-2 gap-1">
-                        <article className="grid grid-flow-col grid-cols-3">
-                            <label className="border px-2 text-nowrap" htmlFor="order_number">
-                                <p>{translations.words.order_number}</p>
-                            </label>
-                            <InfoInput type="text" name="order_number" id="order_number" />
-                        </article>
-                        <article className="grid grid-flow-col grid-cols-3">
-                            <label className="border px-2 text-nowrap" htmlFor="order_date">
-                                <p>{translations.words.order_date}</p>
-                            </label>
-                            <InfoInput type="date" name="order_date" id="order_date" />
-                        </article>
+                        <InfoCell
+                            name="order_number"
+                            type="text"
+                            label={translations.words.order_number}
+                        />
+                        <InfoCell
+                            name="order_date"
+                            type="date"
+                            label={translations.words.order_date}
+                        />
                     </div>
                     <div className="w-1/2 grid grid-flow-row grid-rows-2 gap-1">
-                        <article className="grid grid-flow-col grid-cols-3">
-                            <label className="border px-2 text-nowrap" htmlFor="retailer_code">
-                                {translations.words.retailer_code}
-                            </label>
-                            <InfoInput type="text" name="retailer_code" id="retailer_code" />
-                        </article>
-                        <article className="grid grid-flow-col grid-cols-3">
-                            <label className="border px-2 text-nowrap" htmlFor="retailer_name">{translations.words.retailer_name}</label>
-                            <InfoInput type="text" name="retailer_name" id="retailer_name" />
-                        </article>
+                        <InfoCell
+                            name="retailer_code"
+                            type="text"
+                            label={translations.words.retailer_code}
+                        />
+                        <InfoCell
+                            name="retailer_name"
+                            type="text"
+                            label={translations.words.retailer_name}
+                        />
                     </div>
                 </form>
             </header>
