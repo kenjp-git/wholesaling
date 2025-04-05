@@ -1,7 +1,7 @@
 import TableRow from "@/Components/Table/TableRow";
 import DataCell from "@/Components/Table/DataCell";
 import Box from "@/Components/Commons/Box";
-import TableInput from "@/Components/Forms/TableInput";
+import DataInput from "@/Components/Forms/DataInput";
 import { PropsWithChildren } from "react";
 
 export type OrderDetailsType = {
@@ -30,7 +30,7 @@ export default function OrderInputTemplate({
                 <Box></Box>
             </DataCell>
             <DataCell>
-                <Box><TableInput /></Box>
+                <Box><DataInput /></Box>
                 <Box></Box>
             </DataCell>
             <DataCell>
@@ -39,14 +39,14 @@ export default function OrderInputTemplate({
             </DataCell>
             <DataCell>
                 <Box></Box>
-                <Box><TableInput /></Box>
+                <Box><DataInput /></Box>
             </DataCell>
             <DataCell>
                 <Box></Box>
                 <Box></Box>
             </DataCell>
             <DataCell>
-                <Box><TableInput /></Box>
+                <Box><DataInput /></Box>
                 <Box></Box>
             </DataCell>
             <DataCell>
@@ -54,12 +54,9 @@ export default function OrderInputTemplate({
                 <Box></Box>
             </DataCell>
             <DataCell>
-                <Box><TableInput /></Box>
-                <Box><TableInput /></Box>
+                <Box><DataInput /></Box>
+                <Box><DataInput /></Box>
             </DataCell>
         </TableRow>
     )
 }
-// Compare this snippet from resources/js/Components/Table/TableCell.tsx:
-// import { PropsWithChildren } from "react";
-//
