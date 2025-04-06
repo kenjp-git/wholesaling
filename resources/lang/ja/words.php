@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'OrderInput' => '受注入力',
+    
     'order_number' => '受注番号',
     'order_date' => '受注日付',
     'retailer_code' => '得意先コード',

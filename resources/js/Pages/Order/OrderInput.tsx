@@ -1,4 +1,6 @@
+import { usePage } from '@inertiajs/react';
 import { PageProps } from '@/types';
+import InfoCell from '@/Components/Commons/InfoCell';
 import Table from '@/Components/Table/Table';
 import TableHead from '@/Components/Table/TableHead';
 import TableRow from '@/Components/Table/TableRow';
@@ -10,8 +12,7 @@ import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
 import Box from '@/Components/Commons/Box';
 import { Button } from '@material-tailwind/react';
-import InfoInput from '@/Components/Forms/InfoInput';
-import InfoCell from '@/Components/Commons/InfoCell';
+import WholesalingLayout from '@/Layouts/WholesalingLayout';
 
 
 type translationsType = {
@@ -20,13 +21,13 @@ type translationsType = {
     };
 }
 
-export default function Orderinput({
+function OrderInput({
     translations,
 }: PageProps<{ translations: translationsType }>) {
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
-            <header className="w-8/12">
+            <section className="w-8/12">
                 <form className="flex flex-row row-span-2 grow gap-4 m-2 justify-start">
                     <div className="w-1/2 grid grid-flow-row grid-rows-2 gap-1">
                         <InfoCell
@@ -53,7 +54,7 @@ export default function Orderinput({
                         />
                     </div>
                 </form>
-            </header>
+            </section>
 
             <Table className="w-full h-[70vh] border rounded-lg">
                 <TableHead>
@@ -134,3 +135,8 @@ export default function Orderinput({
         </main>
     )
 }
+
+OrderInput.layout = (page: React.ReactNode) => (
+    <WholesalingLayout children={page} />
+);
+export default OrderInput;
