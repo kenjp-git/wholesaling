@@ -1,5 +1,6 @@
 import { usePage } from '@inertiajs/react';
 import { PageProps } from '@/types';
+import { translationsType } from '@/types/translationsType';
 import InfoCell from '@/Components/Commons/InfoCell';
 import Table from '@/Components/Table/Table';
 import TableHead from '@/Components/Table/TableHead';
@@ -14,12 +15,6 @@ import Box from '@/Components/Commons/Box';
 import { Button } from '@material-tailwind/react';
 import WholesalingLayout from '@/Layouts/WholesalingLayout';
 
-
-type translationsType = {
-    [key: string]: {
-        [key: string]: string;
-    };
-}
 
 function OrderInput({
     translations,
