@@ -10,4 +10,11 @@ export default defineConfig({
         }),
         react(),
     ],
+    server: {
+        host: true,
+        hmr: {
+            host: process.env.VITE_HMR_HOST,
+            port: process.env.VITE_HMR_PORT
+        }
+    }
 });
