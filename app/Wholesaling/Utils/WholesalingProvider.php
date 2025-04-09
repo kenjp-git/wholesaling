@@ -40,7 +40,7 @@ class WholesalingProvider extends ServiceProvider {
     private function loadTranslationsFromDirectory($directory) {
         $translations = [];
 
-        foreach(glob($directory . '/*.php') as $file) {
+        foreach(glob($directory . '/words.php') as $file) {
             $filename = basename($file, '.php');
             $translations[$filename] = include $file;
         }
