@@ -1,7 +1,21 @@
 <?php
 
 return [
+    'Order' => '受注管理',
     'OrderInput' => '受注入力',
+    'OrderList' => '受注一覧',
+    'OrderCancellation' => '受注取消',
+
+    'Purchase' => '発注管理',
+    'PurchaseDetailCreation' => '発注明細作成',
+    'PurchaseList' => '発注一覧',
+    'PurchaseCancellation' => '発注取消',
+
+    'Arrival' => '入荷管理',
+    'ArrivedProductAllocation' => '入荷振分',
+
+    'Shipping' => '出荷管理',
+    'DeliveryNoteCreation' => '納品書作成',
     
     'order_number' => '受注番号',
     'order_date' => '受注日付',
