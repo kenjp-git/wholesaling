@@ -12,7 +12,7 @@ import OrderInputTemplate from './Partials/OrderInputTemplate';
 import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
 import Box from '@/Components/Commons/Box';
-import { Button } from '@material-tailwind/react';
+import Button from '@mui/material/Button';
 import WholesalingLayout from '@/Layouts/WholesalingLayout';
 
 
@@ -90,7 +90,7 @@ function OrderInput({
                         </HeaderCell>
                     </TableRow>
                 </TableHead>
-                <TableBody className="basis-10/12 border-b border-gray-400">
+                <TableBody className="basis-10/12 overflow-auto border-b border-gray-400">
                     <OrderInputTemplate />
                     <OrderInputTemplate />
                     <OrderInputTemplate />
