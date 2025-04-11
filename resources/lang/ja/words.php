@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'Home' => 'ホーム',
     'Order' => '受注管理',
     'OrderInput' => '受注入力',
     'OrderList' => '受注一覧',

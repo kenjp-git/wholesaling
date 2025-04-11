@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { translationsType } from '@/types/translationsType';
 import { navigatorItems } from './navigatorItems';
 import { ListSubheader } from '@mui/material';
@@ -14,9 +14,10 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import Divider from '@mui/material/Divider';
 
-export default function PageNavigator({ translations }: { translations: translationsType }) {
+export default function PageNavigator() {
     const [open, setOpen] = useState<boolean>(false);
     const [nestedOpen, setNestedOpen] = useState<{ [key: string]: boolean }>({});
+    const [home, setHome] = useState<string>('Home');
 
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpen(newOpen);
@@ -29,11 +30,18 @@ export default function PageNavigator({ translations }: { translations: translat
         }));
     };
 
+    useLayoutEffect(() => {
+        const pageData = document.getElementById('app')?.dataset.page || '{}'
+        const pageObject = JSON.parse(pageData)
+        setHome((prev) => { return pageObject.props.translations.words.Home })
+        return () => { }
+    }, [])
+
     const DrawerList = (
         <Box sx={{ width: 250 }} role="presentation">
             <List>
                 <ListSubheader>
-                    {translations.words.Home || 'Home'}
+                    {home || 'Home'}
                 </ListSubheader>
                 {navigatorItems.map((item) => (
                     <div key={item.id}>
