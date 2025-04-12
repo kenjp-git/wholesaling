@@ -1,6 +1,12 @@
+import WholesalingLayout from "@/Layouts/WholesalingLayout";
 
-export default function Home() {
+function Home() {
     return (
         <div className="text-center">Wholesaling Home</div>
     )
 }
+
+Home.layout = (page: React.ReactNode) => (
+    <WholesalingLayout children={page} />
+);
+export default Home;
