@@ -1,5 +1,4 @@
 import { useState, useLayoutEffect } from 'react';
-import { translationsType } from '@/types/translationsType';
 import { navigatorItems } from './navigatorItems';
 import { ListSubheader } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -13,6 +12,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import Divider from '@mui/material/Divider';
+import { router } from '@inertiajs/react';
 
 export default function PageNavigator() {
     const [open, setOpen] = useState<boolean>(false);
@@ -53,7 +53,16 @@ export default function PageNavigator() {
                         <Collapse in={nestedOpen[item.id]} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
                                 {item.children.map((child) => (
-                                    <ListItemButton key={child.text} sx={{ pl: 4 }}>
+                                    <ListItemButton
+                                        key={child.text}
+                                        sx={{ pl: 4 }}
+                                        onClick={() => (
+                                            router.visit(
+                                                child.path,
+                                                { method: 'get' }
+                                            ))
+                                        }
+                                    >
                                         <ListItemText primary={child.text} />
                                     </ListItemButton>
                                 ))}
