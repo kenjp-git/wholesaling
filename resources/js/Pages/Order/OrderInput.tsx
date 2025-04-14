@@ -131,7 +131,4 @@ function OrderInput({
     )
 }
 
-OrderInput.layout = (page: React.ReactNode) => (
-    <WholesalingLayout children={page} />
-);
 export default OrderInput;
