@@ -6,7 +6,4 @@ function Home() {
     )
 }
 
-Home.layout = (page: React.ReactNode) => (
-    <WholesalingLayout children={page} />
-);
 export default Home;
