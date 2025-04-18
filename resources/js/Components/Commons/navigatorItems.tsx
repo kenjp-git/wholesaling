@@ -12,32 +12,56 @@ const getNavigatorItems = () => {
             id: 'order',
             text: translations.words.Order || 'Order',
             children: [
-                { text: translations.words.OrderInput || 'Order Input' },
-                { text: translations.words.OrderList || 'Order List' },
-                { text: translations.words.OrderCancellation || 'Order Cancellation' }
+                {
+                    text: translations.words.OrderInput || 'Order Input',
+                    path: 'order/input'
+                },
+                {
+                    text: translations.words.OrderList || 'Order List',
+                    path: 'order/list'
+                },
+                {
+                    text: translations.words.OrderCancellation || 'Order Cancellation',
+                    path: 'order/cancellation'
+                }
             ]
         },
         {
             id: 'purchase',
             text: translations.words.Purchase || 'Purchase',
             children: [
-                { text: translations.words.PurchaseDetailCreation || 'Purchase Detail Creation' },
-                { text: translations.words.PurchaseList || 'Purchase List' },
-                { text: translations.words.PurchaseCancellation || 'Purchase Cancellation' }
+                {
+                    text: translations.words.PurchaseDetailCreation || 'Purchase Detail Creation',
+                    path: 'purchase/detail/create'
+                },
+                {
+                    text: translations.words.PurchaseList || 'Purchase List',
+                    path: 'purchase/list'
+                },
+                {
+                    text: translations.words.PurchaseCancellation || 'Purchase Cancellation',
+                    path: 'purchase/cancellation'
+                }
             ]
         },
         {
             id: 'arrival',
             text: translations.words.Arrival || 'Arrival',
             children: [
-                { text: translations.words.ArrivedProductAllocation || 'Arrived Product Allocation' },
+                {
+                    text: translations.words.ArrivedProductAllocation || 'Arrived Product Allocation',
+                    path: 'arrival/product/allocation'
+                },
             ]
         },
         {
             id: 'shipping',
             text: translations.words.Shipping || 'Shipping',
             children: [
-                { text: translations.words.DeliveryNoteCreation || 'Delivery Note Creation' },
+                {
+                    text: translations.words.DeliveryNoteCreation || 'Delivery Note Creation',
+                    path: 'shipping/delivery/note/create'
+                },
             ]
         },
     ]
