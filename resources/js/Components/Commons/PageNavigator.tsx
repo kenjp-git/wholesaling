@@ -12,7 +12,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import Divider from '@mui/material/Divider';
-import { router } from '@inertiajs/react';
+import { router, Link } from '@inertiajs/react';
 
 export default function PageNavigator() {
     const [open, setOpen] = useState<boolean>(false);
@@ -40,9 +40,13 @@ export default function PageNavigator() {
     const DrawerList = (
         <Box sx={{ width: 250 }} role="presentation">
             <List>
-                <ListSubheader>
-                    {home || 'Home'}
-                </ListSubheader>
+                <Link href="/">
+                    <ListSubheader>
+                        <ListItemButton>
+                            {home || 'Home'}
+                        </ListItemButton>
+                    </ListSubheader>
+                </Link>
                 {navigatorItems.map((item) => (
                     <div key={item.id}>
                         <Divider />
@@ -56,12 +60,12 @@ export default function PageNavigator() {
                                     <ListItemButton
                                         key={child.text}
                                         sx={{ pl: 4 }}
-                                        onClick={() => (
+                                        onClick={() => {
                                             router.visit(
-                                                child.path,
+                                                `/${child.path}`,
                                                 { method: 'get' }
-                                            ))
-                                        }
+                                            )
+                                        }}
                                     >
                                         <ListItemText primary={child.text} />
                                     </ListItemButton>
