@@ -8,7 +8,7 @@ export default function Error({ status, message }: { status: number, message: st
     }[status]
 
     return (
-        <div className="text-center bg-slate-50 rounded-full shadow-lg">
+        <div className="w-[1024px] mx-auto text-center bg-slate-50 shadow-lg">
             <h1>{title}</h1>
             <p>{message}</p>
         </div>
