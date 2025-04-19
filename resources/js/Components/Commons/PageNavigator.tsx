@@ -41,7 +41,7 @@ export default function PageNavigator() {
         <Box sx={{ width: 250 }} role="presentation">
             <List>
                 <Link href="/">
-                    <ListSubheader>
+                    <ListSubheader sx={{ px: 0 }}>
                         <ListItemButton>
                             {home || 'Home'}
                         </ListItemButton>
