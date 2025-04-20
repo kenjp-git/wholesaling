@@ -15,10 +15,12 @@ import Box from '@/Components/Commons/Box';
 import Button from '@mui/material/Button';
 import WholesalingLayout from '@/Layouts/WholesalingLayout';
 
+let pageName: string
 
 function OrderInput({
     translations,
 }: PageProps<{ translations: translationsType }>) {
+    pageName = translations.words.OrderInput
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
@@ -130,5 +132,15 @@ function OrderInput({
         </main>
     )
 }
+
+OrderInput.layout = (page: any) => {
+    return (
+        <WholesalingLayout
+            pageName={pageName}
+        >
+            {page}
+        </WholesalingLayout>
+    );
+};
 
 export default OrderInput;
