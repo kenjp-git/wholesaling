@@ -2,9 +2,14 @@ import { PropsWithChildren, HTMLProps, useEffect, useState } from "react";
 import { Head } from "@inertiajs/react";
 import PageNavigator from '@/Components/Commons/PageNavigator';
 
+interface WholesalingLayoutProps extends PropsWithChildren<HTMLProps<HTMLElement>> {
+    pageName: string;
+}
+
 export default function WholesalingLayout({
-    children
-}: PropsWithChildren<HTMLProps<HTMLElement>>) {
+    children,
+    pageName
+}: WholesalingLayoutProps) {
     const [pageTitle, setPageTitle] = useState<string>('')
 
     useEffect(() => {
@@ -21,7 +26,7 @@ export default function WholesalingLayout({
             <Head title={pageTitle} />
             <header className="w-[1024px] relative mx-auto bg-blue-200">
                 <PageNavigator />
-                <h1 className="text-center text-lg my-auto">{pageTitle}</h1>
+                <h1 className="text-center text-lg my-auto">{pageName}</h1>
             </header>
             {children}
         </>
