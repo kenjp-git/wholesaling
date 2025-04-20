@@ -13,8 +13,8 @@ createInertiaApp({
     resolve: name => {
         const pages = import.meta.glob('./Pages/**/*.tsx', { eager: true });
         let page = pages[`./Pages/${name}.tsx`] as { default: { layout?: unknown } };
-        page.default.layout = (page: React.ReactNode) => (
-            <WholesalingLayout children={page} />
+        page.default.layout = page.default.layout ? page.default.layout : (page: React.ReactNode) => (
+            <WholesalingLayout children={page} pageName={appName} />
         );
         return page;
     },
