@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { usePage } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import { translationsType } from '@/types/translationsType';
@@ -15,12 +16,9 @@ import Box from '@/Components/Commons/Box';
 import Button from '@mui/material/Button';
 import WholesalingLayout from '@/Layouts/WholesalingLayout';
 
-let pageName: string
-
-function OrderInput({
+const OrderInput = function ({
     translations,
 }: PageProps<{ translations: translationsType }>) {
-    pageName = translations.words.OrderInput
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
@@ -133,13 +131,14 @@ function OrderInput({
     )
 }
 
-OrderInput.layout = (page: any) => {
+OrderInput.layout = (page: ReactElement) => {
+    const pageName: string = page.props.translations.words.OrderInput
+
     return (
         <WholesalingLayout
             pageName={pageName}
-        >
-            {page}
-        </WholesalingLayout>
+            children={page}
+        />
     );
 };
 
