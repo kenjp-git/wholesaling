@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { usePage } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import { translationsType } from '@/types/translationsType';
@@ -14,11 +14,14 @@ import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
 import Box from '@/Components/Commons/Box';
 import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import { DialogContent, DialogTitle, List, ListItem, Typography } from '@mui/material';
 import WholesalingLayout from '@/Layouts/WholesalingLayout';
 
 const OrderInput = function ({
     translations,
 }: PageProps<{ translations: translationsType }>) {
+    const [productDialog, toggleProductDialog] = useState<boolean>(false)
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
@@ -126,8 +129,43 @@ const OrderInput = function ({
                 </TableFoot>
             </Table>
 
-            <Button disabled className='bg-gray-400 font-thin py-1 px-4 justify-end'>確定</Button>
+            <section className="flex flex-row">
+                <Button
+                    variant="contained"
+                    // className="bg-blue-500 text-white w-1/12 mx-auto my-4 font-bold"
+                    sx={{ fontWeight: 'bold' }}
+                    onClick={() => {
+                        toggleProductDialog(prev => true);
+                    }}
+                >商品選択</Button>
+            </section>
+
+            <Dialog
+                open={productDialog}
+                onClose={() => {
+                    toggleProductDialog(prev => false);
+                }}
+                fullWidth
+                maxWidth="lg"
+            >
+                <DialogTitle>
+                    <Typography>商品を選択</Typography>
+                </DialogTitle>
+                <DialogContent>
+                    <List>
+                        <ListItem>お米</ListItem>
+                    </List>
+                </DialogContent>
+                <Button
+                    variant="contained"
+                    sx={{ fontWeight: 'bold' }}
+                    onClick={() => {
+                        toggleProductDialog(prev => false);
+                    }}
+                >閉じる</Button>
+            </Dialog>
         </main>
+
     )
 }
 
