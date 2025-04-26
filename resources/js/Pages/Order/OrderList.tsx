@@ -9,12 +9,9 @@ import WholesalingLayout from '@/Layouts/WholesalingLayout';
 import TableBody from '@/Components/Table/TableBody';
 import HeaderCell from '@/Components/Table/HeaderCell';
 
-let pageName: string
-
-function OrderList({
+const OrderList = function ({
     translations
 }: PageProps<{ translations: translationsType }>) {
-    pageName = translations.words.OrderList
 
     return (
         <main className=" w-[1024px] mx-auto my-4 items-center">
@@ -63,12 +60,13 @@ function OrderList({
 }
 
 OrderList.layout = (page: ReactElement) => {
+    const pageName = page.props.translations.words.OrderList
+
     return (
         <WholesalingLayout
             pageName={pageName}
-        >
-            {page}
-        </WholesalingLayout>
+            children={page}
+        />
     );
 }
 
