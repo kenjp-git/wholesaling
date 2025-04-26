@@ -7,8 +7,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/js/app.tsx',
-                'resources/js/Pages/Error.tsx',
-                'resources/js/Pages/Home.tsx',
+                // 'resources/js/Pages/Error.tsx',
+                // 'resources/js/Pages/Home.tsx',
             ],
             refresh: true,
         }),
