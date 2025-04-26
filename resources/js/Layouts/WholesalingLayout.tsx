@@ -23,7 +23,7 @@ export default function WholesalingLayout({
 
     return (
         <>
-            <Head title={pageTitle} />
+            <Head title={pageName} />
             <header className="w-[1024px] relative mx-auto bg-blue-200">
                 <PageNavigator />
                 <h1 className="text-center text-lg my-auto">{pageName}</h1>
