@@ -146,7 +146,6 @@ const OrderInput = function ({
                     toggleProductDialog(prev => false);
                 }}
                 fullWidth
-                maxWidth="lg"
             >
                 <DialogTitle>
                     <Typography>商品を選択</Typography>
