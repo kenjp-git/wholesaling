@@ -148,52 +148,6 @@ const OrderInput = function ({
                     toggleProductDialog(prev => false);
                 }}
             />
-            {/* <Dialog
-                open={productDialog}
-                onClose={() => {
-                    toggleProductDialog(prev => false);
-                }}
-                fullWidth
-            >
-                <DialogTitle>
-                    <Typography>商品を選択</Typography>
-                </DialogTitle>
-                <DialogContent>
-                    <Table className="w-full h-[50vh] border rounded-lg">
-                        <TableHead>
-                            <TableRow className="grid-flow-col grid-cols-4 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden">
-                                <th>商品コード</th>
-                                <th>商品名</th>
-                                <th>規格</th>
-                                <th>単価</th>
-                            </TableRow>
-                        </TableHead>
-                        <tbody>
-                            <tr>
-                                <td>1234567890123</td>
-                                <td>商品A</td>
-                                <td>規格A</td>
-                                <td>1000円</td>
-                            </tr>
-                            <tr>
-                                <td>2345678901234</td>
-                                <td>商品B</td>
-                                <td>規格B</td>
-                                <td>2000円</td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </DialogContent>
-                <DialogActions>
-                    <Button
-                        variant="contained"
-                        sx={{ fontWeight: 'bold' }}
-                        onClick={() => {
-                            toggleProductDialog(prev => false);
-                        }}
-                    >閉じる</Button>
-                </DialogActions>
-            </Dialog> */}
         </main>
 
     )
