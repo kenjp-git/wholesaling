@@ -15,7 +15,7 @@ import FooterCell from '@/Components/Table/FooterCell';
 import Box from '@/Components/Commons/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import { DialogContent, DialogTitle, List, ListItem, Typography } from '@mui/material';
+import { DialogActions, DialogContent, DialogTitle, List, ListItem, Typography } from '@mui/material';
 import WholesalingLayout from '@/Layouts/WholesalingLayout';
 
 const OrderInput = function ({
@@ -156,13 +156,15 @@ const OrderInput = function ({
                         <ListItem>お米</ListItem>
                     </List>
                 </DialogContent>
-                <Button
-                    variant="contained"
-                    sx={{ fontWeight: 'bold' }}
-                    onClick={() => {
-                        toggleProductDialog(prev => false);
-                    }}
-                >閉じる</Button>
+                <DialogActions>
+                    <Button
+                        variant="contained"
+                        sx={{ fontWeight: 'bold' }}
+                        onClick={() => {
+                            toggleProductDialog(prev => false);
+                        }}
+                    >閉じる</Button>
+                </DialogActions>
             </Dialog>
         </main>
 
