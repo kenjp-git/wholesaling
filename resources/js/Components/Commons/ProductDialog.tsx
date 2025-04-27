@@ -44,18 +44,18 @@ export default function ProductDialog({
                             </TableRow>
                         </TableHead>
                         <tbody
-                            className="overflow-auto"
+                            className="grid gap-px bg-gray-400 overflow-auto"
                         >
                             {/* Example product rows */}
                             {Array.from({ length: 100 }, (_, index) => (
                                 <tr
-                                    className="grid grid-flow-col grid-cols-4 w-full"
+                                    className="grid grid-flow-col grid-cols-4 gap-px bg-gray-400 w-full"
                                     key={index}
                                 >
-                                    <td>1234567890123</td>
-                                    <td>商品A</td>
-                                    <td>規格A</td>
-                                    <td>1000円</td>
+                                    <DialogDataCell>1234567890123</DialogDataCell>
+                                    <DialogDataCell>商品A</DialogDataCell>
+                                    <DialogDataCell>規格A</DialogDataCell>
+                                    <DialogDataCell>1000円</DialogDataCell>
                                 </tr>
                             ))}
                         </tbody>
@@ -88,5 +88,19 @@ function DialogHeaderCell({
         <th className={style}>
             {children}
         </th>
+    );
+}
+
+function DialogDataCell({
+    children,
+    ...props
+}: React.HTMLProps<HTMLTableCellElement>) {
+    const default_style = "bg-white";
+    const style = `${default_style} ${props.className}`;
+
+    return (
+        <td className={style}>
+            {children}
+        </td>
     );
 }
