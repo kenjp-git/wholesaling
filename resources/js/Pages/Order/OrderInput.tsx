@@ -14,6 +14,7 @@ import TableFoot from '@/Components/Table/TableFoot';
 import FooterCell from '@/Components/Table/FooterCell';
 import Box from '@/Components/Commons/Box';
 import Button from '@mui/material/Button';
+import ProductDialog from '@/Components/Commons/ProductDialog';
 import Dialog from '@mui/material/Dialog';
 import { DialogActions, DialogContent, DialogTitle, List, ListItem, Typography } from '@mui/material';
 import WholesalingLayout from '@/Layouts/WholesalingLayout';
@@ -140,7 +141,14 @@ const OrderInput = function ({
                 >商品選択</Button>
             </section>
 
-            <Dialog
+            <ProductDialog
+                translations={translations}
+                open={productDialog}
+                toggleProductDialog={() => {
+                    toggleProductDialog(prev => false);
+                }}
+            />
+            {/* <Dialog
                 open={productDialog}
                 onClose={() => {
                     toggleProductDialog(prev => false);
@@ -151,15 +159,15 @@ const OrderInput = function ({
                     <Typography>商品を選択</Typography>
                 </DialogTitle>
                 <DialogContent>
-                    <table>
-                        <thead>
-                            <tr>
+                    <Table className="w-full h-[50vh] border rounded-lg">
+                        <TableHead>
+                            <TableRow className="grid-flow-col grid-cols-4 bg-gray-400 border-gray-400 rounded-t-lg overflow-hidden">
                                 <th>商品コード</th>
                                 <th>商品名</th>
                                 <th>規格</th>
                                 <th>単価</th>
-                            </tr>
-                        </thead>
+                            </TableRow>
+                        </TableHead>
                         <tbody>
                             <tr>
                                 <td>1234567890123</td>
@@ -174,7 +182,7 @@ const OrderInput = function ({
                                 <td>2000円</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </Table>
                 </DialogContent>
                 <DialogActions>
                     <Button
@@ -185,7 +193,7 @@ const OrderInput = function ({
                         }}
                     >閉じる</Button>
                 </DialogActions>
-            </Dialog>
+            </Dialog> */}
         </main>
 
     )
