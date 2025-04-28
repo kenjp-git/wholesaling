@@ -52,7 +52,20 @@ const OrderList = function ({
                     </tr>
                 </TableHead>
                 <TableBody>
+                    {Array.from({ length: 100 }, (_, index) => (
 
+                        <TableRow className="grid grid-flow-col gap-px bg-gray-400 w-full" key={index}>
+                            <td>1234567890123</td>
+                            <td>2023-10-01</td>
+                            <td>0001</td>
+                            <td>山田太郎</td>
+                            <td>営業部</td>
+                            <td>10</td>
+                            <td>10000円</td>
+                            <td>Web</td>
+                            <td>詳細</td>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </main>
