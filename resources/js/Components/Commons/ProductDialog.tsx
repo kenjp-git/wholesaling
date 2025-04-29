@@ -1,5 +1,5 @@
 import { translationsType } from '@/types/translationsType';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, PropsWithChildren, SetStateAction, useEffect, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -48,15 +48,9 @@ export default function ProductDialog({
                         >
                             {/* Example product rows */}
                             {Array.from({ length: 100 }, (_, index) => (
-                                <tr
-                                    className="grid grid-flow-col grid-cols-4 gap-px bg-gray-400 w-full"
+                                <DialogBodyRow
                                     key={index}
-                                >
-                                    <DialogDataCell>1234567890123</DialogDataCell>
-                                    <DialogDataCell>商品A</DialogDataCell>
-                                    <DialogDataCell>規格A</DialogDataCell>
-                                    <DialogDataCell>1000円</DialogDataCell>
-                                </tr>
+                                />
                             ))}
                         </tbody>
                     </Table>
@@ -93,14 +87,72 @@ function DialogHeaderCell({
 
 function DialogDataCell({
     children,
+    bgColor,
+    setSelected,
     ...props
-}: React.HTMLProps<HTMLTableCellElement>) {
-    const default_style = "bg-white";
-    const style = `${default_style} ${props.className}`;
+}: PropsWithChildren<React.HTMLProps<HTMLTableCellElement>> & { bgColor?: string, setSelected: Dispatch<SetStateAction<boolean>> }) {
+    const default_style = bgColor || "bg-white";
+    const [style, setStyle] = useState<string>(`${default_style} ${props.className}`);
 
     return (
-        <td className={style}>
+        <td
+            onClick={() => {
+                setSelected((prev) => {
+                    // console.log('click');
+                    return !prev;
+                })
+            }}
+            className={style}>
             {children}
         </td>
+    );
+}
+
+function DialogBodyRow({ }) {
+    const [selected, setSelected] = useState<boolean>(false);
+    const [bgColor, setBgColor] = useState<string>("bg-white");
+
+    useEffect(() => {
+        console.log('selected', selected);
+        // selected ? setBgColor("bg-blue-200") : setBgColor("bg-white");
+    }, [selected]);
+
+    const changeBgColor = (color: string) => {
+        setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
+    }
+
+    return (
+        <tr className="grid grid-flow-col grid-cols-4 gap-px bg-gray-400 w-full">
+            <DialogDataCell
+                bgColor={bgColor}
+                setSelected={
+                    setSelected
+                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
+                }
+            >
+                1234567890123
+            </DialogDataCell>
+            <DialogDataCell
+                bgColor={bgColor}
+                setSelected={
+                    setSelected
+                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
+                }
+            >商品A</DialogDataCell>
+            <DialogDataCell
+                bgColor={bgColor}
+                setSelected={
+                    setSelected
+                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
+                }
+            >規格A</DialogDataCell>
+            <DialogDataCell
+                bgColor={bgColor}
+                setSelected={
+                    setSelected
+                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
+                }
+            >1000円</DialogDataCell>
+        </tr>
     );
 }
