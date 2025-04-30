@@ -54,7 +54,7 @@ const OrderList = function ({
                 <TableBody>
                     {Array.from({ length: 100 }, (_, index) => (
 
-                        <TableRow className="grid grid-flow-col gap-px bg-gray-400 w-full" key={index}>
+                        <TableRow className="grid grid-flow-col grid-cols-9 gap-px bg-gray-400 w-full" key={index}>
                             <td>1234567890123</td>
                             <td>2023-10-01</td>
                             <td>0001</td>
