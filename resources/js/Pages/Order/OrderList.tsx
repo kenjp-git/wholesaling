@@ -55,15 +55,15 @@ const OrderList = function ({
                     {Array.from({ length: 100 }, (_, index) => (
 
                         <TableRow className="grid grid-flow-col grid-cols-9 gap-px bg-gray-400 w-full" key={index}>
-                            <td>1234567890123</td>
-                            <td>2023-10-01</td>
-                            <td>0001</td>
-                            <td>山田太郎</td>
-                            <td>営業部</td>
-                            <td>10</td>
-                            <td>10000円</td>
-                            <td>Web</td>
-                            <td>詳細</td>
+                            <ListDataCell>1234567890123</ListDataCell>
+                            <ListDataCell>2023-10-01</ListDataCell>
+                            <ListDataCell>0001</ListDataCell>
+                            <ListDataCell>山田太郎</ListDataCell>
+                            <ListDataCell>営業部</ListDataCell>
+                            <ListDataCell>10</ListDataCell>
+                            <ListDataCell>10000円</ListDataCell>
+                            <ListDataCell>Web</ListDataCell>
+                            <ListDataCell>詳細</ListDataCell>
                         </TableRow>
                     ))}
                 </TableBody>
@@ -84,3 +84,16 @@ OrderList.layout = (page: ReactElement) => {
 }
 
 export default OrderList;
+
+function ListDataCell({
+    children,
+    ...props
+}: {
+    children: React.ReactNode;
+}) {
+    return (
+        <td className="border border-white bg-white">
+            {children}
+        </td>
+    )
+}
