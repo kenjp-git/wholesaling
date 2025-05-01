@@ -105,7 +105,7 @@ function DialogDataCell({
                     return !prev;
                 })
             }}
-            className={style}>
+            className={`${style} hover:cursor-pointer`}>
             {children}
         </td>
     );
