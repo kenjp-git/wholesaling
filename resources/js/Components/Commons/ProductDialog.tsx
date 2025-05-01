@@ -102,7 +102,6 @@ function DialogDataCell({
         <td
             onClick={() => {
                 setSelected((prev) => {
-                    // console.log('click');
                     return !prev;
                 })
             }}
@@ -117,7 +116,6 @@ function DialogBodyRow({ }) {
     const [bgColor, setBgColor] = useState<string>("bg-white");
 
     useEffect(() => {
-        // console.log('selected', selected);
         selected ? setBgColor(() => "bg-blue-200") : setBgColor(() => "bg-white");
     }, [selected]);
 
@@ -131,7 +129,6 @@ function DialogBodyRow({ }) {
                 bgColor={bgColor}
                 setSelected={
                     setSelected
-                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
                 }
             >
                 1234567890123
@@ -140,21 +137,18 @@ function DialogBodyRow({ }) {
                 bgColor={bgColor}
                 setSelected={
                     setSelected
-                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
                 }
             >商品A</DialogDataCell>
             <DialogDataCell
                 bgColor={bgColor}
                 setSelected={
                     setSelected
-                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
                 }
             >規格A</DialogDataCell>
             <DialogDataCell
                 bgColor={bgColor}
                 setSelected={
                     setSelected
-                    // setBgColor((prev) => prev === "bg-white" ? "bg-blue-200" : "bg-white");
                 }
             >1000円</DialogDataCell>
         </tr>
