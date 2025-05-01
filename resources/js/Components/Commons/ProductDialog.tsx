@@ -94,6 +94,10 @@ function DialogDataCell({
     const default_style = bgColor || "bg-white";
     const [style, setStyle] = useState<string>(`${default_style} ${props.className}`);
 
+    useEffect(() => {
+        setStyle(() => `${default_style} ${props.className}`);
+    }, [bgColor]);
+
     return (
         <td
             onClick={() => {
@@ -113,8 +117,8 @@ function DialogBodyRow({ }) {
     const [bgColor, setBgColor] = useState<string>("bg-white");
 
     useEffect(() => {
-        console.log('selected', selected);
-        // selected ? setBgColor("bg-blue-200") : setBgColor("bg-white");
+        // console.log('selected', selected);
+        selected ? setBgColor(() => "bg-blue-200") : setBgColor(() => "bg-white");
     }, [selected]);
 
     const changeBgColor = (color: string) => {
